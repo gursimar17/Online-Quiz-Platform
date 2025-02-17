@@ -1,0 +1,171 @@
+/* Base styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Light Alice Blue background */
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #333; /* Darker text for contrast */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    color: #555; /* Slightly darker for better readability */
+    font-size: 1.2rem;
+}
+
+/* Quiz list page */
+#quiz-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.quiz-card {
+    background: linear-gradient(135deg, #dfee5d 0%, #80ec72 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.start-quiz-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff6b6b; /* Soft coral */
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-quiz-btn:hover {
+    background-color: #ff4757; /* Bright coral */
+    transform: scale(1.1);
+}
+
+/* Quiz page */
+#quiz-container {
+    max-width: 700px;
+    margin: auto;
+    background-color: #fff; /* White background for contrast */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.question-block {
+    margin-bottom: 30px;
+}
+
+.question-block h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    padding: 10px;
+    background-color: #f4f4f4; /* Light gray */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #34ace0; /* Soft blue */
+    color: white;
+}
+
+label:hover {
+    transform: translateX(10px);
+    background-color: #74b9ff; /* Light blue */
+}
+
+.submit-btn {
+    background-color: #ff793f; /* Soft orange */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff5722; /* Bright orange */
+    transform: scale(1.05);
+}
+
+.result-msg {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #2c3e50; /* Darker gray for better contrast */
+    text-align: center;
+}
+
+/* Result page */
+#result-container {
+    text-align: center;
+    padding: 40px;
+}
+
+#result-message {
+    font-size: 1.5rem;
+    color: #333; /* Dark gray for text */
+    padding: 20px;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%); /* Soft gradient */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.start-quiz-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff6b6b; /* Soft coral */
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-quiz-btn:hover {
+    background-color: #ff4757; /* Bright coral */
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .quiz-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #quiz-container {
+        padding: 25px;
+    }
+}

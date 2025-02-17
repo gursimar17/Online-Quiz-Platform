@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="result-wrapper">
+        <header>
+            <h1>Your Quiz Result</h1>
+        </header>
+
+        <section id="result-container">
+            <div id="result-message">
+                <!-- The result message will be populated dynamically by JavaScript -->
+            </div>
+
+            <a href="index.html" class="start-quiz-btn">Take Another Quiz</a>
+        </section>
+    </div>
+
+    <script>
+        // Extract the score from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        const totalQuestions = urlParams.get('total');
+
+        // Display the score and feedback message
+        const resultMessage = document.getElementById('result-message');
+        resultMessage.innerHTML = `
+            <h2>You scored ${score} out of ${totalQuestions}</h2>
+            <p>${getFeedbackMessage(score, totalQuestions)}</p>
+        `;
+
+        // Generate feedback based on performance
+        function getFeedbackMessage(score, total) {
+            const percentage = (score / total) * 100;
+            if (percentage === 100) {
+                return "Excellent! You got a perfect score!";
+            } else if (percentage >= 75) {
+                return "Great job! You're almost perfect!";
+            } else if (percentage >= 50) {
+                return "Good effort! Keep practicing!";
+            } else {
+                return "Don't worry! Try again and you'll do better.";
+            }
+        }
+    </script>
+</body>
+</html>
